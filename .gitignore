@@ -33,4 +33,5 @@ build/
 .vscode/
 
 # Ignore application.properties file
-.src/main/resources/
+src/main/java/resources/application.properties
+
