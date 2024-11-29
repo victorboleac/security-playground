@@ -15,4 +15,9 @@ public class userManagerImpl implements userManagerService {
     public boolean findByGithubUsername(String username) {
         return userManagerRepository.findBygithubUsername(username) != null;
     }
+    @Override
+    public Users addUser(Users user){
+       userManagerRepository.save(user);
+        return user;
+    }
 }
