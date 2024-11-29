@@ -16,8 +16,9 @@ public class SecurityConfig {
         http.csrf(AbstractHttpConfigurer::disable)
                 .authorizeHttpRequests(auth->
                         auth.requestMatchers(HttpMethod.GET,"/api/v1/open/greeting").permitAll()
+                                .requestMatchers(HttpMethod.GET,"/*").permitAll()
                                 .requestMatchers(HttpMethod.GET, "/api/v1/protected/greeting")
-                                .authenticated()).formLogin(withDefaults());
+                                .authenticated()).oauth2Login(withDefaults());
         return http.build();
 
     }
